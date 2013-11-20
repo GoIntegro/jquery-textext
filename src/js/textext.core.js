@@ -597,6 +597,8 @@
 	 */
 	p.itemContains = function(item, needle)
 	{
+        console.log(item)
+        console.log(this.itemToString(item).toLowerCase().indexOf(needle.toLowerCase()) == 0)
 		return this.itemToString(item).toLowerCase().indexOf(needle.toLowerCase()) == 0;
 	};
 

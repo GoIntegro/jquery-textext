@@ -597,8 +597,6 @@
 	 */
 	p.itemContains = function(item, needle)
 	{
-        console.log(item)
-        console.log(this.itemToString(item).toLowerCase().indexOf(needle.toLowerCase()) == 0)
 		return this.itemToString(item).toLowerCase().indexOf(needle.toLowerCase()) == 0;
 	};
 
@@ -1125,6 +1123,7 @@
 	 */
 	p.onSetInputData = function(e, data)
 	{
+       // console.log(data)
 		this.input().val(data);
 	};
 
@@ -1143,8 +1142,16 @@
 	 */
 	p.onSetFormData = function(e, data)
 	{
-		var self = this;
-		self.hiddenInput().val(self.serializeData(data));
+        if(data.length > 0)
+        {
+            var ids2save = [];
+            for(var i in data) {
+                ids2save[i] = JSON.parse(data[i].name).id
+            }
+		    var self = this;
+		    self.hiddenInput().val(self.serializeData(ids2save));
+        }
+		//self.hiddenInput().val(self.serializeData(data));
 	};
 
 	/**

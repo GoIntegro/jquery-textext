@@ -690,8 +690,6 @@
 		var self = this,
 			node = $(self.opts(OPT_HTML_TAG))
 			;
-        console.log(JSON.parse(tag.name))
-        console.log(JSON.parse(tag.name).name)
 		node.find('.text-label').text(JSON.parse(tag.name).name);
 		//node.find('.text-label').text(self.itemManager().itemToString(tag));
 		node.data(CSS_TAG, tag);

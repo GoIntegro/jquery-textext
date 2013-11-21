@@ -318,9 +318,9 @@
 
 	/**
 	 * Returns top level dropdown container HTML element.
-	 * 
+	 *
 	 * @signature TextExtAutocomplete.containerElement()
-	 * 
+	 *
 	 * @author agorbatchev
 	 * @date 2011/08/15
 	 * @id TextExtAutocomplete.containerElement
@@ -925,9 +925,8 @@
 	{
 		var self     = this,
 			renderer = self.opts(OPT_RENDER),
-			node     = self.addDropdownItem(renderer ? renderer.call(self, suggestion) : self.itemManager().itemToString(suggestion))
-			;
-
+			node     = self.addDropdownItem(renderer ? renderer.call(self, suggestion.name) : self.itemManager().itemToString(suggestion.name))
+            ;
 		node.data(CSS_SUGGESTION, suggestion);
 	};
 
@@ -948,7 +947,6 @@
 			container = self.containerElement().find('.text-list'),
 			node      = $(self.opts(OPT_HTML_SUGGESTION))
 			;
-
 		node.find('.text-label').html(html);
 		container.append(node);
 		return node;
@@ -1081,7 +1079,6 @@
 		var self       = this,
 			suggestion = self.selectedSuggestionElement().data(CSS_SUGGESTION)
 			;
-
 		if(suggestion)
 		{
 			self.val(self.itemManager().itemToString(suggestion));

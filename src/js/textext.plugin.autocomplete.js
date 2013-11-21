@@ -947,7 +947,7 @@
 			container = self.containerElement().find('.text-list'),
 			node      = $(self.opts(OPT_HTML_SUGGESTION))
 			;
-		node.find('.text-label').html(html);
+		node.find('.text-label').html(html.replace(/"/g, ''));
 		container.append(node);
 		return node;
 	};

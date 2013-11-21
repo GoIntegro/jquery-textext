@@ -24,32 +24,14 @@ Tags with Custom Data Objects
 <script src="src/js/textext.plugin.suggestions.js"></script>
 <script src="src/js/textext.plugin.tags.js"></script>
 <script type="text/javascript">
+    suggestions = [
+        { name: 'PHP' , id: 1},
+        { name: 'PHP' , id: 4},
+        { name: 'Closure', id: 2 },
+        { name: 'Java', id: 3 }
+    ];
     $('#textarea').textext({
         plugins: 'tags autocomplete suggestions',
-        suggestions: [
-            { name: 'PHP' , id: 1},
-            { name: 'PHP' , id: 4},
-            { name: 'Closure', id: 2 },
-            { name: 'Java', id: 3 }
-        ],
-
-        ext: {
-            itemManager: {
-                stringToItem: function(str)
-                {
-                    return { name: str };
-                },
-
-                itemToString: function(item)
-                {
-                    return JSON.stringify(item);
-                },
-
-                compareItems: function(item1, item2)
-                {
-                    return item1.name == item2.name;
-                }
-            }
-        }
+        suggestions: suggestions
     });
 </script>

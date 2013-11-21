@@ -611,10 +611,10 @@
 	 * @date 2011/08/19
 	 * @id ItemManager.stringToItem
 	 */
-	p.stringToItem = function(str)
-	{
-		return str;
-	};
+    p.stringToItem = function(str)
+    {
+        return { name: str };
+    }
 
 	/**
 	 * Converts specified item to string. Because default implemenation works with string, input string
@@ -629,11 +629,10 @@
 	 * @date 2011/08/19
 	 * @id ItemManager.itemToString
 	 */
-	p.itemToString = function(item)
-	{
-		return item;
-	};
-
+    p.itemToString = function(item)
+    {
+        return JSON.stringify(item);
+    }
 	/**
 	 * Returns `true` if both items are equal, `false` otherwise. Because default implemenation works with 
 	 * string, input items are compared as strings. To use custom objects, different implementation of this 
@@ -648,11 +647,10 @@
 	 * @date 2011/08/19
 	 * @id ItemManager.compareItems
 	 */
-	p.compareItems = function(item1, item2)
-	{
-		return item1 == item2;
-	};
-
+    p.compareItems = function(item1, item2)
+    {
+        return item1.name == item2.name;
+    }
 	//--------------------------------------------------------------------------------
 	// TextExt core component
 

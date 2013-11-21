@@ -467,7 +467,6 @@
 			val  = self.val(),
 			tag  = self.itemManager().stringToItem(val)
 			;
-
 		if(self.isTagAllowed(tag))
 		{
 			self.addTags([ tag ]);
@@ -691,7 +690,6 @@
 			node = $(self.opts(OPT_HTML_TAG))
 			;
 		node.find('.text-label').text(JSON.parse(tag.name).name);
-		//node.find('.text-label').text(self.itemManager().itemToString(tag));
 		node.data(CSS_TAG, tag);
 		return node;
 	};

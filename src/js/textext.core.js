@@ -568,18 +568,16 @@
 	 */
 	p.filter = function(list, query)
 	{
-		var result = [],
-			i, item
-			;
-
-		for(i = 0; i < list.length; i++)
-		{
-			item = list[i];
-			if(this.itemContains(item, query))
-				result.push(item);
-		}
-
-		return result;
+		var result = [];
+        var aux = [];
+        for(var i in list) {
+            aux[i] = list[i].name;
+        }
+        for(var i in aux) {
+            if(aux[i].indexOf(query) !== -1)
+                result.push(list[i]);
+        }
+		return result
 	};
 
 	/**

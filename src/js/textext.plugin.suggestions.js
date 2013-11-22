@@ -168,8 +168,8 @@
 		var self        = this,
 			suggestions = self.opts(OPT_SUGGESTIONS)
 			;
-
-		suggestions.sort();
-		self.setSuggestions(self.itemManager().filter(suggestions, data.query));
+        if(suggestions !== null)
+		    suggestions.sort();
+		    self.setSuggestions(self.itemManager().filter(suggestions, data.query));
 	};
 })(jQuery);

@@ -689,8 +689,14 @@
 		var self = this,
 			node = $(self.opts(OPT_HTML_TAG))
 			;
-		node.find('.text-label').text(JSON.parse(tag.name).name);
-		node.data(CSS_TAG, tag);
-		return node;
+        try {
+    		node.find('.text-label').text(JSON.parse(tag.name).name);
+	    	node.data(CSS_TAG, tag);
+        }
+        catch(err) {
+            alert('user no esiste loco')
+            node = null
+        }
+        return node;
 	};
 })(jQuery);
